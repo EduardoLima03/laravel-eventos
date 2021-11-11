@@ -13,26 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+use App\Http\Controllers\EventController;
 
-    $nome = "Eduardo";
-    $arr =[10, 20, 30, 40, 50];
-    $nomes = ["Eduardo", "Tiago", "Lucas", "Pedro"];
-
-    return view('welcome', ['nome' => $nome, 'arr' => $arr, 'nomes' => $nomes]);
-});
+Route::get('/', [EventController::class, 'index']);
+Route::get('/events/create', [EventController::class, 'create']);
 
 Route::get('/contact', function (){
     return view('contact');
 });
 
 //Paramentros em rotas
-Route::get('/product/{id?}', function ($id = 1){//permite chama a view sem para paramentro
+Route::get('/product/{id?}', function ($id = null){//permite chama a view sem para paramentro
     //paramentro pela url
     return view('product', ['id' => $id]);
 });
+
 Route::get('/products', function (){
     //paramentro pelo query
-    $busca = require('search');
+    $busca = request('search');
     return view('products', ['busca' => $busca]);
 });
