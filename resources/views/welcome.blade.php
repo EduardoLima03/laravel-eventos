@@ -3,7 +3,6 @@
 @section('title', 'HDC Events') 
 
 @section('content')
-    <img src="/img/banner.jpg" alt="" srcset="">
     <h1>{{$nome}}</h1>
     @for ($i = 0; $i < count($arr); $i++)
         <p>{{$arr[$i]}}</p>

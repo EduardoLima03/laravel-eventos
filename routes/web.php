@@ -25,3 +25,14 @@ Route::get('/', function () {
 Route::get('/contact', function (){
     return view('contact');
 });
+
+//Paramentros em rotas
+Route::get('/product/{id?}', function ($id = 1){//permite chama a view sem para paramentro
+    //paramentro pela url
+    return view('product', ['id' => $id]);
+});
+Route::get('/products', function (){
+    //paramentro pelo query
+    $busca = require('search');
+    return view('products', ['busca' => $busca]);
+});
