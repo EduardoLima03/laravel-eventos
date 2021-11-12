@@ -3,15 +3,7 @@
 @section('title', 'HDC Events') 
 
 @section('content')
-    <h1>{{$nome}}</h1>
-    @for ($i = 0; $i < count($arr); $i++)
-        <p>{{$arr[$i]}}</p>
-    @endfor
-    <!-- Comentario com o Blade -->
-    {{-- Teste do comentatio--}}
-
-    @foreach ($nomes as $item)
-        <p>index do loop: {{$loop->index}}</p>
-        <p>{{$item}}</p>
-    @endforeach
+   @foreach ($events as $item)
+       <p>{{$item->title}} -- {{$item->description}}</p>
+   @endforeach
 @endsection

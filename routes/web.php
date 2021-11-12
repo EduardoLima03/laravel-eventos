@@ -21,8 +21,3 @@ Route::get('/', [EventController::class, 'index']);
 Route::get('/events/create', [EventController::class, 'create']);
 
 Route::get('/contact', [ContactController::class, 'index']);
-
-//Paramentros em rotas
-Route::get('/product/{id?}', [ProductController::class, 'product']);
-
-Route::get('/products', [ProductController::class, 'products']);

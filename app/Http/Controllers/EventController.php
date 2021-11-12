@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Event;//importa o model de acesso ao bd
+
 class EventController extends Controller
 {
     public function index(){
-        $nome = "Eduardo";
-        $arr =[10, 20, 30, 40, 50];
-        $nomes = ["Eduardo", "Tiago", "Lucas", "Pedro"];
-
-        return view('welcome', ['nome' => $nome, 'arr' => $arr, 'nomes' => $nomes]);
+        $events = Event::all();//pega todos os evento cadastrodo no db => select * from events;
+        return view('welcome', ['events' => $events]);
     }
 
     public function create(){
