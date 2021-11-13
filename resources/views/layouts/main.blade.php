@@ -24,9 +24,9 @@
 
         <header>
             <nav class="navbar navbar-expand-lg navbar-light">
-                <div class="container-fluid">
+                <div class="container-fluid" class="navbar" id="navbar">
                     <a href="/" class="navbar-brand">
-                        <img src="/img/hdcevents_logo.svg" alt="HDC Events" class="navbar-brand-img" width="30" height="24">
+                        <img src="/img/hdcevents_logo.svg" alt="HDC Events" class="navbar-brand-img">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
