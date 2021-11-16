@@ -23,9 +23,11 @@ class EventController extends Controller
 
         //preenchendo os dados de eventos vindo na requisição
         $event->title = $request->title;
+        $event->date = $request->date;
         $event->city = $request->city;
         $event->private = $request->private;
         $event->description = $request->description;
+        $event->items = $request->items;
 
         // Image Upload
         if($request->hasFile('image') && $request->file('image')->isValid()){
