@@ -9,8 +9,22 @@ use App\Models\Event;//importa o model de acesso ao bd
 class EventController extends Controller
 {
     public function index(){
-        $events = Event::all();//pega todos os evento cadastrodo no db => select * from events;
-        return view('welcome', ['events' => $events]);
+
+        //para saber se o usuario ta pequisando por algum evento
+        $search = request('search');
+
+        if($search){
+            //se o usuario busca por evento.
+            // é feita a consulta com os texto proculado e retorna para view
+            $events = Event::where([
+                ['title', 'like', '%'.$search.'%']
+            ])->get();
+        }else{
+            $events = Event::all();//pega todos os evento cadastrodo no db => select * from events;
+        }
+
+        
+        return view('welcome', ['events' => $events, 'search' => $search]);
     }
 
     public function create(){
