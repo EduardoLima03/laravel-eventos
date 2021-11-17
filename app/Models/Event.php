@@ -14,4 +14,9 @@ class Event extends Model
     ];
 
     protected $dates = ['date'];
+
+    public function user(){
+        //um evento pertence a um usuario
+        return $this->belongsTo('App\Models\User');
+    }
 }

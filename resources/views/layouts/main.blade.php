@@ -38,11 +38,6 @@
                             <li class="nav-item">
                                 <a href="/events/create" class="nav-link">Criar Eventos</a>
                             </li>
-                            
-                            <li class="nav-item">
-                                <a href="/contact" class="nav-link">Contato</a>
-                            </li>
-
                             <!-- Diretivas de autenticação -->
                             @auth
                                 <li class="nav-item">

@@ -18,7 +18,8 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 
 Route::get('/', [EventController::class, 'index']);
-Route::get('/events/create', [EventController::class, 'create']);
+//middleware: protege a view de acesso por usuarios não logado
+Route::get('/events/create', [EventController::class, 'create'])->middleware('auth');
 Route::post('/events', [EventController::class, 'store']);
 Route::get('/events/{id}', [EventController::class, 'show']);
 
