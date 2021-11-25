@@ -4,6 +4,7 @@
 
 body{
     min-height: 100vh;
+    padding-bottom: 100px;
     position: relative;
 }
 
@@ -195,16 +196,21 @@ header{
 .dashboard-events-container th{
     width: 25%;
 }
+.dashboard-events-container form{
+    display: inline-block;
+}
 
 /* footer */
 footer{
-    height: 100px;
     text-align: center;
-    background-color: #353e48; 
+    background-color: #353e48;
+    color: #fff;
     padding: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 footer p{
-    color: #fff;
-    font-weight: bold;
+    margin-bottom: 0;
 }
